@@ -826,10 +826,7 @@ After you click on the `seminar-01` assignment, select GitHub for
 submission method. If this is the first time you are submitting with
 Gradescope, you’ll be asked to connect to your GitHub account.
 
-<figure>
-<img src="images/gradescopesubmit.png" alt="Gradescope submit part 1" />
-<figcaption aria-hidden="true">Gradescope submit part 1</figcaption>
-</figure>
+![](images/gradescopesubmit.png)
 
 Once your GitHub account is linked, select the repository you want to
 submit for this assignment. This should be the one we just committed and
@@ -837,19 +834,12 @@ pushed to. Also select the branch you worked on (here we only have one,
 but in the future this can be useful if you had different branches).
 Then click Upload.
 
-<figure>
-<img src="images/gradescopesubmit2.png"
-alt="Gradescope submit part 2" />
-<figcaption aria-hidden="true">Gradescope submit part 2</figcaption>
-</figure>
+![](images/gradescopesubmit2.png)
 
 Success! You’ll see your submitted files. These are the files that will
 be marked.
 
-<figure>
-<img src="images/gradescopefinal.png" alt="Gradescope submit part 2" />
-<figcaption aria-hidden="true">Gradescope submit part 2</figcaption>
-</figure>
+![](images/gradescopefinal.png)
 
 The TAs will mark the repository version that was submitted through
 Gradescope. Any commits made after submission on Gradescope will be not
@@ -864,6 +854,10 @@ Make sure you complete these steps before the deadline:
 1.  **Commit** changes locally
 2.  **Push** to GitHub
 3.  **Submit** the repository on Gradescope
+
+You can find more details and tips on the [submission
+guide](https://stat540-ubc.github.io/submission_guide.html) page of the
+course website.
 
 ## Final notes and some additional resources
 
