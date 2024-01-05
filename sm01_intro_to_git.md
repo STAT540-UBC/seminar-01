@@ -15,7 +15,8 @@ By the end of this seminar, you should
 - Have your environment set up for using Git and GitHub
 - Have practical experience with the routine Git workflow: Create,
   Clone, Stage, Commit, Push, and Pull
-- Learn the key steps for submission of assignments in this course
+- Get familiar with the key steps for submission of assignments in this
+  course using GitHub and Gradescope
 
 ## Part 1: What is Version Control? Git? GitHub? Git Client?
 
@@ -79,23 +80,24 @@ well-designed web-based interfaces.
 
 But be careful, while GitHub and many other services are great for
 tracking files, they may not always have the capacity to store large
-amounts of data. GitHub recommends that repositories are under the size
-of 1GB (see this github
+amounts of data. GitHub recommends that repositories are under a total
+size of 1GB (see this github
 [help](https://help.github.com/articles/what-is-my-disk-quota/) page).
-More importantly, GitHub doesn’t allow for files larger than 100MB in
-size (see [Working with large
+More importantly, GitHub doesn’t allow for individual files larger than
+100MB in size (see [Working with large
 files](https://help.github.com/articles/working-with-large-files/)).
 
 Even for private solo projects, it’s a good idea to push your work to a
-remote location for peace of mind. Why? Because it’s fairly easy to
-screw up your local Git repository, especially when you’re new at this.
-The good news is that often only the Git infrastructure is backed up.
-Your files are just fine! Which makes your Git pickle all the more
-frustrating. There are official Git solutions to these problems, but
-they might require expertise and patience you can’t access at 3a.m. If
-you’ve recently pushed your work to GitHub, it’s easy to grab a fresh
-copy, patch things up with the changes that only exist locally, and get
-on with your life.
+remote location (private to only you, or shared with collaborators or
+the public) for peace of mind. Why? Because it’s fairly easy to screw up
+your local Git repository, especially when you’re new at this. The good
+news is that often only the Git infrastructure is backed up. Your files
+are just fine! Which makes your Git pickle all the more frustrating.
+There are official Git solutions to these problems, but they might
+require expertise and patience you can’t access at 3a.m. If you’ve
+recently pushed your work to GitHub, it’s easy to grab a fresh copy,
+patch things up with the changes that only exist locally, and get on
+with your life.
 
 We target GitHub – not Bitbucket or GitLab – for the sake of
 specificity. However, all the big-picture principles and even some
@@ -208,7 +210,7 @@ following into the terminal and press enter.
 
 ``` bash
 xcode-select --version
-## xcode-select version 2384.
+## xcode-select version 2397.
 ```
 
 Enter one of these commands to elicit an offer to install developer
@@ -265,18 +267,13 @@ other:
 
 - Incorporate your actual name! People like to know who they’re dealing
   with. Also makes your username easier for people to guess or remember.
-- Reuse your username from other contexts, e.g., Twitter or Slack if
-  it’s available.
+- Reuse your username from other contexts.
 - Pick a username you will be comfortable revealing to your future boss.
 - Shorter is better than longer.
 - Be as unique as possible in as few characters as possible. In some
   settings GitHub auto-completes or suggests usernames.
 - Make it timeless. Don’t highlight your current university, employer,
   or place of residence.
-- Avoid words laden with special meaning in programming. In my first
-  inept efforts to script around the GitHub API, I assigned lots of
-  issues to the guy with username NA because my vector of GitHub
-  usernames contained missing values. A variant of Little Bobby Tables.
 
 You can change your username later, but better to get this right the
 first time.
@@ -422,63 +419,86 @@ copy on your laptop is then called the “local” repository. “Pushing” and
 in sync with each other.
 
 For example, You can modify codes in your “local” repository and then,
-when ready, “push” your changes to the “remote” repository on GitHub.
-Your group members can then “pull” the most up-to-date version of the
-“remote” repository from GitHub into their “local” repositories and
-continue to work on the project.
+when ready, “push” your changes to the “remote” repository on GitHub. In
+shared repositories, your group members can then “pull” the most
+up-to-date version of the “remote” repository from GitHub into their
+“local” repositories and continue to work on the project.
 
 Don’t worry if you don’t understand every detail of the workflow just
 yet. Just get the overall picture for now. You’ll gain a much deeper
 understanding once we start trying things out for real, starting now!
 
-We are going to start by creating a brand new repository for this
-seminar. We will use this repository to illustrate how to start an
-assignment for this course. To complete the deliverable for this
-seminar, follow these steps to push new files to this repository.
+Next, we will create a new repository for this seminar. We will use this
+repository to illustrate how to complete an assignment for this course.
+To complete the deliverable for this seminar, follow these steps to push
+new files to this repository.
 
 ### Create a new assignment repository
 
-Here we are going to create a new **assignment** repository. To start a
-new assignment, you’ll need an assignment invite link. You’ll have one
-of these for each individual deliverable, and one for the group project.
-You can find these in Canvas.
+Whenever you start a new assignment, you’ll need an assignment invite
+link. You’ll have one of these for each individual deliverable, and one
+for the group project. You can find these in Canvas.
 
 Log into Canvas and navigate to our course page. Go to the Assignments
 tab, and find the ‘Seminar 1’ item - click on it.
 
-![Canvas](images/canvas.png)
+<figure>
+<img src="images/canvas.png" alt="Canvas" />
+<figcaption aria-hidden="true">Canvas</figcaption>
+</figure>
 
 Click on the invite link for the Seminar 1 assignment.
 
-![Invite link](images/invitelink.png)
+<figure>
+<img src="images/invitelink.png" alt="Invite link" />
+<figcaption aria-hidden="true">Invite link</figcaption>
+</figure>
 
-You’ll be prompted to login to GitHub if you’re not already logged in.
-If this is your first assignment for the class, you’ll first be asked to
-link your GitHub ID to your name in the class roster. Once that’s done,
-you’ll be taken to a page that invites you to accept the assignment.
-Click the green “Accept this assignment” button.
+You’ll be prompted to login to GitHub if you’re not already logged in,
+and asked for permission to link to GitHub Classroom (the tool we use to
+distribute the assignments). Once that’s done, you’ll be taken to a page
+that invites you to accept the assignment. Click the green “Accept this
+assignment” button.
 
-![Accept assignment](images/accept.png)
+<figure>
+<img src="images/accept.png" alt="Accept assignment" />
+<figcaption aria-hidden="true">Accept assignment</figcaption>
+</figure>
 
 If all goes well, you’ll arrive at the ‘creating repo’ page. This could
 take a few minutes if the assignment contains a lot of files, but in
 most cases should be almost instantaneous. So go ahead and refresh your
 browser.
 
-![Creating repo](images/creatingrepo.png)
+<figure>
+<img src="images/creatingrepo.png" alt="Creating repo" />
+<figcaption aria-hidden="true">Creating repo</figcaption>
+</figure>
 
 When your repo is ready, you’ll see a page that has a link to it. Note
 that the assignment due date is listed.
 
-![Repo ready](images/repoready.png) Follow the link. Congratulations!
-This is the web page of your new repository on Github. Using the GitHub
-website, you will be able to browse your files directly inside of an
-internet browser (although so far it is empty since we haven’t added any
-files). Notice that this repo is labeled ‘Private’. It is only
-accessible to you, and to the teaching team. No one else can see it.
-You’ll get to shared repositories when we start the group projects.
+<figure>
+<img src="images/repoready.png" alt="Repo ready" />
+<figcaption aria-hidden="true">Repo ready</figcaption>
+</figure>
 
-![Repository created screenshot](images/create_repository_success.png)
+Click on the link highlighted in blue. Congratulations! This is the web
+page of your new repository on Github. Using the GitHub website, you
+will be able to browse your files directly inside of an internet
+browser. Notice that this repo is labeled ‘Private’. It is only
+accessible to you, and to the teaching team. No one else can see it.
+You’ll get to shared repositories when we start the group projects. Also
+notice that the repository only contains one file, called `README.md`.
+For some future assignments, the repository will already contain more
+content.
+
+<figure>
+<img src="images/create_repository_success.png"
+alt="Repository created screenshot" />
+<figcaption aria-hidden="true">Repository created
+screenshot</figcaption>
+</figure>
 
 If you cannot create a repository, get help from one of the TAs.
 
@@ -499,27 +519,27 @@ repository on your machine.
 Make sure you have the latest version of RStudio installed before you
 start.
 
-Copy the https URL from your GitHub repository website. It will be
-something like
+Click on the green ‘Code’ button, and copy the https URL from your
+GitHub repository website. It will be something like
 `https://github.com/STAT540-UBC-2022/seminar-01-yourgithubID.git` See
 below.
 
-![Repository link screenshot](images/create_repository_success_link.png)
-
-**Important Note:** Unlike in this example, where we started with an
-empty repository, for some future deliverables, the repository created
-for you will already contain files. In that case, **to find the
-“repository URL”, locate the green “Code” button on the upper right
-corner of the file list as shown below.**
-
-![GitHub clone](images/clone.png)
+<figure>
+<img src="images/clone.png" alt="GitHub clone" />
+<figcaption aria-hidden="true">GitHub clone</figcaption>
+</figure>
 
 Next, in RStudio, start a new Project:
 
 - File \> New Project \> Version Control \> Git. In the “repository URL”
   paste the URL of your new GitHub repository.
 
-![Create new project screenshot](images/create_new_rstudio_project.png)
+<figure>
+<img src="images/create_new_rstudio_project.png"
+alt="Create new project screenshot" />
+<figcaption aria-hidden="true">Create new project
+screenshot</figcaption>
+</figure>
 
 Do you NOT see an option to get the Project from Version Control? Go to
 [chapter 14 of Happy Git and GitHub for the
@@ -543,27 +563,33 @@ remote repository.
 Also note that a new RStudio window has been opened for you as a
 workspace. Notice the “Git” tab in your RStudio window.
 
-![New RStudio window containing the new
-project](images/new_project_rstudio_window.png)
+<figure>
+<img src="images/new_project_rstudio_window.png"
+alt="New RStudio window containing the new project" />
+<figcaption aria-hidden="true">New RStudio window containing the new
+project</figcaption>
+</figure>
 
 Congratulations, again! You have cloned the Git repository onto your
 local machine. Well done!
 
-Notice that the project directory current contains nothing except for
-the automatically generated .Rproj and .gitignore file. Ignore this last
-file for now, we will talk about it later (ignore .gitignore, ha! It’s
-okay, you don’t have to laugh). This is not very exciting yet at all. So
-let’s add something.
+Notice that the project directory current contains the `README.md` file,
+along with the automatically generated `.Rproj` and `.gitignore` file.
+The `.Rproj` file contains various project options and can also be used
+as a shortcut for opening the project directly from the filesystem.
+Ignore the last file for now, we will talk about it later (ignore
+.gitignore, ha! It’s okay, you don’t have to laugh).
 
-The first thing you should add to every directory you create is
+The first file you should include in every directory you create is
 README.md, and you will soon see why. This is something that integrates
 very well into the GitHub user interface; GitHub always detects your
 README files automatically and displays it right on the repository web
 page, giving information about the repository.
 
-Go ahead and create a new file in your project directory (File-\>New
-File-\>Markdown file). Add the line “This is a line from RStudio”. Save
-your file to the local repo directory and call it `README.md`.
+Our README file already exists. Go ahead and open it in RStudio by
+clicking on it’s name in the file pane (or File -\> Open File). Add the
+line “This is a line from RStudio”. Save the changes (disk icon or File
+-\> Save).
 
 Next, we want to publish this change on GitHub so that it becomes a
 permanent change with a record (and in the future so that your group
@@ -581,7 +607,10 @@ Stage the README.md file by going to the “Git” tab on top right of the
 RStudio window and check “staged”. Also stage the .Rproj file while
 you’re at it.
 
-![Stage changes](images/stage.png)
+<figure>
+<img src="images/stage.png" alt="Stage changes" />
+<figcaption aria-hidden="true">Stage changes</figcaption>
+</figure>
 
 Great, that was easy. Git now knows about these new changes you want to
 submit.
@@ -598,22 +627,25 @@ is something you don’t get from only staging the files.
 You can commit by clicking Tools \> Version Control \> Commit (or hit
 the Commit button in the Git pane). Notice the changes for each file can
 be viewed in the popup window. Enter a commit message to describe your
-change. I put “Add README.md and the RStudio project file to repository”
-for mine. All your staged files will be included in this commit. Click
-“Commit” and “Close”.
+change. I put “Edit README.md and add the RStudio project file to
+repository” for mine. All your staged files will be included in this
+commit. Click “Commit” and “Close”.
 
-![Commit changes](images/commit.png)
+<figure>
+<img src="images/commit.png" alt="Commit changes" />
+<figcaption aria-hidden="true">Commit changes</figcaption>
+</figure>
 
-Go to your repository page on [GitHub](https://github.com/). Notice that
-the new files are not yet on GitHub. Surprised?
+Go back to your repository page on GitHub and refresh. Notice that the
+new files are not yet on GitHub. Surprised?
 
 **IMPORTANT NOTE!! The changes are NOT on GitHub yet. They have NOT been
-published. Commit is an operation that happens solely on your local
-repository.** This allows you to create a record of changes while being
-offline. This also shields you from complications that may arise when
-merging with the remote repository (until you decide to push). This is
-something that confuses a lot of beginners. Take a moment to think about
-this. If in doubt, ask a TA and clarify.
+published. Commit is an operation that happens solely on your local copy
+of the repository.** This allows you to create a record of changes while
+being offline. This also shields you from complications that may arise
+when merging with the remote repository (until you decide to push). This
+is something that confuses a lot of beginners. Take a moment to think
+about this. If in doubt, ask a TA and clarify.
 
 ### Push
 
@@ -622,26 +654,32 @@ to date with your local changes. Normally, you might have accumulated
 one or more commits in your local repository that you’re ready to
 publish. All of these commits can be pushed with one “push” operation.
 
-Now we will push the one commit we made with the addition of the
-README.md and .Rproj files.
+Now we will push the one commit we made with the edit to the `README.md`
+file and addition of the `.Rproj` file.
 
 Do this by clicking the green ‘Up’ arrow (or Tools-\>Version
 Control-\>Push Branch).
 
-![Push](images/push.png)
+<figure>
+<img src="images/push.png" alt="Push" />
+<figcaption aria-hidden="true">Push</figcaption>
+</figure>
 
-You should see this pop-up in RStudio.
+You should see pop-up like this in RStudio.
 
     >>> git push origin HEAD:refs/heads/main
-    To https://github.com/STAT540-UBC-2022/seminar-01-teststudentstat540.git
+    To https://github.com/STAT540-UBC-2024/seminar-01-teststudentstat540.git
      * [new branch]      HEAD -> main
 
-Now, go back to your repository page on [GitHub](https://github.com/).
-This is what you should see.
+Now, go back to your repository page on GitHub and refresh. This is what
+you should see.
 
-![Changes pushed!](images/pushed.png)
+<figure>
+<img src="images/pushed.png" alt="Changes pushed!" />
+<figcaption aria-hidden="true">Changes pushed!</figcaption>
+</figure>
 
-Notice that the content of README.md is displayed directly on the
+Notice that the new content of README.md is displayed directly on the
 repository’s home page!
 
 Take a moment to browse through GitHub’s user interface. You can
@@ -656,9 +694,7 @@ owner (in the case of assignments that is you or a teaching team member)
 must first add the individual(s) to the collaborators list in order for
 them to have access. This is because by default the repo is private to
 only you and the teaching team. You can change this if you wish by going
-to ‘Settings’ - see below.
-
-![GitHub add collaborators](images/add_collabs.png)
+to ‘Settings’.
 
 ### Pull
 
@@ -671,27 +707,44 @@ new change that you don’t currently have. In order to sync up, you’ll
 perform a “pull” from the remote repository into your local repository.
 
 To make a change directly on GitHub, go to your repository page, click
-on the file README.md. On top right of the file, there should be a
-pencil icon.
+on the file README.md. On top right of the file, there is a pencil icon.
 
-![Edit file on GitHub directly](images/pencil.png)
+<figure>
+<img src="images/pencil.png" alt="Edit file on GitHub directly" />
+<figcaption aria-hidden="true">Edit file on GitHub directly</figcaption>
+</figure>
 
 Click on the pencil. Add this line to README.md: “This change was made
 directly on GitHub.” Put in a commit message and commit directly to the
-“main” branch. Now you should see this.
+“main” branch by clicking the green “Commit changes…” button. Now you
+should see this.
 
-![README.md changed directly on GitHub](images/demo_direct_edit.png)
+<figure>
+<img src="images/demo_direct_edit.png"
+alt="README.md changed directly on GitHub" />
+<figcaption aria-hidden="true">README.md changed directly on
+GitHub</figcaption>
+</figure>
 
 Check that your local version of the file still only contains the single
 line: “This is a line from RStudio”.
 
-![Local version of README.md is unchanged](images/local_before.png)
+<figure>
+<img src="images/local_before.png"
+alt="Local version of README.md is unchanged" />
+<figcaption aria-hidden="true">Local version of README.md is
+unchanged</figcaption>
+</figure>
 
 Click the blue down arrow in the Git pane (or click Tools-\>Version
 Control-\>Pull Branches). And….. Voila!
 
-![Local version of README.md changed after
-pulling](images/local_after.png)
+<figure>
+<img src="images/local_after.png"
+alt="Local version of README.md changed after pulling" />
+<figcaption aria-hidden="true">Local version of README.md changed after
+pulling</figcaption>
+</figure>
 
 **IMPORTANT NOTE** - Note that we recommend against making extensive
 changes directly on GitHub. The browser is an unreliable environment
@@ -725,28 +778,92 @@ extension using a wildcard. For example, if we wanted to make sure we
 don’t commit data in txt files, we could add the line `*.txt` to our
 .gitignore file. GitHub keeps up a set of commonly used .gitignore files
 as well as more information about their usage
-[here](https://github.com/github/gitignore).
+[here](https://github.com/github/gitignore). You can commit this file
+now, but it’s not required for the deliverable.
 
 ## Part 4: Deliverables
 
 If you’re still with us, and you’ve made the two commits to the README
 file in your assignment repo (one by pushing from your local machine,
 and another by committing directly from GitHub), then you’re almost
-done! All that’s left is to **submit** the repository URL on Canvas -
-copy and paste the URL of your repository as the submission for that
-assignment on Canvas (e.g. the link for your Seminar 1 repo will be
-something like
-`https://github.com/STAT540-UBC-2023/seminar-01-yourGitHubID`).
+done! All that’s left is to **submit** the repository URL on Gradescope
+(see next section).
 
-Just make sure you complete these two commits **and push** before the
-deadline - verify that you can see them on GitHub like below, otherwise
-we won’t be able to see them either, even if you submit the correct
-repository link on Canvas before the deadline. The TAs will mark the
-repos based on the latest commit that occurred before the deadline (this
-tag is auto-generated). Any commits after the deadline will be ignored
-(not marked).
+Before moving on, verify that you have pushed all your work so you can
+see the changes on GitHub. In the case of this seminar, you should see
+your latest commit on GitHub as shown below.
 
-![Verify two commits are visible](images/twocommits.png)
+<figure>
+<img src="images/latestcommit.png"
+alt="Verify two commits are visible" />
+<figcaption aria-hidden="true">Verify two commits are
+visible</figcaption>
+</figure>
+
+### Gradescope submission
+
+To submit your repository on Gradescope, click on the Gradescope link in
+the Assignment page on Canvas (alternatively, you can navigate to
+Gradescope using the tab located on the Canvas navigation pane).
+
+![Open gradescope](images/opengradescope.png) You should be taken to
+your Gradescope dashboard, where you’ll see our course:
+
+<figure>
+<img src="images/gradescopehome.png" alt="Gradescope dashboard" />
+<figcaption aria-hidden="true">Gradescope dashboard</figcaption>
+</figure>
+
+When you click on our course, you’ll see a list of available assignments
+to submit:
+
+<figure>
+<img src="images/gradescopecourse.png" alt="Gradescope course page" />
+<figcaption aria-hidden="true">Gradescope course page</figcaption>
+</figure>
+
+After you click on the `seminar-01` assignment, select GitHub for
+submission method. If this is the first time you are submitting with
+Gradescope, you’ll be asked to connect to your GitHub account.
+
+<figure>
+<img src="images/gradescopesubmit.png" alt="Gradescope submit part 1" />
+<figcaption aria-hidden="true">Gradescope submit part 1</figcaption>
+</figure>
+
+Once your GitHub account is linked, select the repository you want to
+submit for this assignment. This should be the one we just committed and
+pushed to. Also select the branch you worked on (here we only have one,
+but in the future this can be useful if you had different branches).
+Then click Upload.
+
+<figure>
+<img src="images/gradescopesubmit2.png"
+alt="Gradescope submit part 2" />
+<figcaption aria-hidden="true">Gradescope submit part 2</figcaption>
+</figure>
+
+Success! You’ll see your submitted files. These are the files that will
+be marked.
+
+<figure>
+<img src="images/gradescopefinal.png" alt="Gradescope submit part 2" />
+<figcaption aria-hidden="true">Gradescope submit part 2</figcaption>
+</figure>
+
+The TAs will mark the repository version that was submitted through
+Gradescope. Any commits made after submission on Gradescope will be not
+be visible to us (not marked), but you may resubmit your repository as
+many times as you like up until the deadline (and we’ll use the latest
+submission).
+
+### Assignment Completion Overview
+
+Make sure you complete these steps before the deadline:
+
+1.  **Commit** changes locally
+2.  **Push** to GitHub
+3.  **Submit** the repository on Gradescope
 
 ## Final notes and some additional resources
 
@@ -778,7 +895,7 @@ Here are some resources in case you want to learn more.
 
 ## Attributions
 
-This seminar was oringally developed by [Eric
+This seminar was originally developed by [Eric
 Chu](https://github.com/echu113) with materials adapted from [Happy Git
 and GitHub for the useR](http://happygitwithr.com/) by [Dr. Jenny
 Bryan](https://github.com/jennybc). It was later modified extensively by

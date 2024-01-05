@@ -13,7 +13,7 @@ By the end of this seminar, you should
 * Have some familiarity with the GitHub browser interface and be able to use some of its basic features such as navigating the contents of a repository and creating issues
 * Have your environment set up for using Git and GitHub
 * Have practical experience with the routine Git workflow: Create, Clone, Stage, Commit, Push, and Pull
-* Learn the key steps for submission of assignments in this course
+* Get familiar with the key steps for submission of assignments in this course using GitHub and Gradescope
 
 ## Part 1: What is Version Control? Git? GitHub? Git Client? 
 
@@ -40,9 +40,9 @@ Git has been re-purposed by the data science community. In addition to using it 
 
 This is where hosting services like GitHub, Bitbucket, and GitLab come in. They provide a home for your Git-based projects on the internet. If you have no idea what I'm talking about, think of it as DropBox but much, much better. The remote host acts as a distribution channel or clearinghouse for your Git-managed project. It allows other people to see your stuff, sync up with you, and perhaps even make changes. These hosting providers improve upon traditional Unix Git servers with well-designed web-based interfaces. 
 
-But be careful, while GitHub and many other services are great for tracking files, they may not always have the capacity to store large amounts of data. GitHub recommends that repositories are under the size of 1GB (see this github [help](https://help.github.com/articles/what-is-my-disk-quota/) page). More importantly, GitHub doesn't allow for files larger than 100MB in size (see [Working with large files](https://help.github.com/articles/working-with-large-files/)).
+But be careful, while GitHub and many other services are great for tracking files, they may not always have the capacity to store large amounts of data. GitHub recommends that repositories are under a total size of 1GB (see this github [help](https://help.github.com/articles/what-is-my-disk-quota/) page). More importantly, GitHub doesn't allow for individual files larger than 100MB in size (see [Working with large files](https://help.github.com/articles/working-with-large-files/)).
 
-Even for private solo projects, it's a good idea to push your work to a remote location for peace of mind. Why? Because it's fairly easy to screw up your local Git repository, especially when you're new at this. The good news is that often only the Git infrastructure is backed up. Your files are just fine! Which makes your Git pickle all the more frustrating. There are official Git solutions to these problems, but they might require expertise and patience you can't access at 3a.m. If you've recently pushed your work to GitHub, it's easy to grab a fresh copy, patch things up with the changes that only exist locally, and get on with your life.
+Even for private solo projects, it's a good idea to push your work to a remote location (private to only you, or shared with collaborators or the public) for peace of mind. Why? Because it's fairly easy to screw up your local Git repository, especially when you're new at this. The good news is that often only the Git infrastructure is backed up. Your files are just fine! Which makes your Git pickle all the more frustrating. There are official Git solutions to these problems, but they might require expertise and patience you can't access at 3a.m. If you've recently pushed your work to GitHub, it's easy to grab a fresh copy, patch things up with the changes that only exist locally, and get on with your life.
 
 We target GitHub – not Bitbucket or GitLab – for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms.
 
@@ -83,7 +83,7 @@ Otherwise, if you have a current version of Git installed, you can skip the next
 
 #### Install Git for Windows people
 
-Install [Git for Windows](https://git-for-windows.github.io/), previously known as msysgit or “Git Bash”, to get Git in addition to some other useful tools, such as the Bash shell. Yes, all those names are totally confusing. You may accept all the default settings during installation.
+Install [Git for Windows](https://git-for-windows.github.io/), previously known as msysgit or "Git Bash", to get Git in addition to some other useful tools, such as the Bash shell. Yes, all those names are totally confusing. You may accept all the default settings during installation.
 
 * This approach leaves the Git executable in a conventional location, which will help you and other programs, e.g. RStudio, find it and use it. This also supports a transition to more expert use, because the Bash shell will be useful as you venture outside of R/RStudio.
 * This also leaves you with a Git client, though not a very good one. 
@@ -102,7 +102,7 @@ Verify that Xcode command line tools has been installed by typing the following 
 
 ```{bash, eval = FALSE}
 xcode-select --version
-## xcode-select version 2384.
+## xcode-select version 2397.
 ```
 
 Enter one of these commands to elicit an offer to install developer command line tools:
@@ -112,7 +112,7 @@ git --version
 git config
 ```
 
-Accept the offer! Click on “Install”.
+Accept the offer! Click on "Install".
 
 If the Xcode method isn't successful for you, you can install git from here: [http://git-scm.com/downloads](http://git-scm.com/downloads). Or you can try this command if you use Homebrew:
 
@@ -149,13 +149,12 @@ If you don't have a GitHub account already, register for one at [GitHub](https:/
 
 A few tips on selecting a username, which sadly tend to contradict each other:
 
-* Incorporate your actual name! People like to know who they’re dealing with. Also makes your username easier for people to guess or remember.
-* Reuse your username from other contexts, e.g., Twitter or Slack if it's available.
+* Incorporate your actual name! People like to know who they're dealing with. Also makes your username easier for people to guess or remember.
+* Reuse your username from other contexts.
 * Pick a username you will be comfortable revealing to your future boss.
 * Shorter is better than longer.
 * Be as unique as possible in as few characters as possible. In some settings GitHub auto-completes or suggests usernames.
-* Make it timeless. Don’t highlight your current university, employer, or place of residence.
-* Avoid words laden with special meaning in programming. In my first inept efforts to script around the GitHub API, I assigned lots of issues to the guy with username NA because my vector of GitHub usernames contained missing values. A variant of Little Bobby Tables.
+* Make it timeless. Don't highlight your current university, employer, or place of residence.
 
 You can change your username later, but better to get this right the first time.
 
@@ -252,15 +251,15 @@ A repository is simply a directory for your project. It is no different from any
 
 When a repository is stored on GitHub, it is called the "remote" repository. You can then "clone" this repository onto your laptop. The copy on your laptop is then called the "local" repository. "Pushing" and "pulling" are operations for keeping the local and remote repositories in sync with each other. 
 
-For example, You can modify codes in your "local" repository and then, when ready, "push" your changes to the "remote" repository on GitHub. Your group members can then "pull" the most up-to-date version of the "remote" repository from GitHub into their "local" repositories and continue to work on the project. 
+For example, You can modify codes in your "local" repository and then, when ready, "push" your changes to the "remote" repository on GitHub. In shared repositories, your group members can then "pull" the most up-to-date version of the "remote" repository from GitHub into their "local" repositories and continue to work on the project. 
 
 Don't worry if you don't understand every detail of the workflow just yet. Just get the overall picture for now. You'll gain a much deeper understanding once we start trying things out for real, starting now!
 
-We are going to start by creating a brand new repository for this seminar. We will use this repository to illustrate how to start an assignment for this course. To complete the deliverable for this seminar, follow these steps to push new files to this repository.
+Next, we will create a new repository for this seminar. We will use this repository to illustrate how to complete an assignment for this course. To complete the deliverable for this seminar, follow these steps to push new files to this repository.
 
-### Create a new assignment repository
+### Create a new assignment repository 
 
-Here we are going to create a new **assignment** repository. To start a new assignment, you'll need an assignment invite link. You'll have one of these for each individual deliverable, and one for the group project. You can find these in Canvas. 
+Whenever you start a new assignment, you'll need an assignment invite link. You'll have one of these for each individual deliverable, and one for the group project. You can find these in Canvas. 
 
 Log into Canvas and navigate to our course page. Go to the Assignments tab, and find the 'Seminar 1' item - click on it.
 
@@ -270,7 +269,7 @@ Click on the invite link for the Seminar 1 assignment.
 
 ![Invite link](images/invitelink.png)
 
-You'll be prompted to login to GitHub if you're not already logged in. If this is your first assignment for the class, you'll first be asked to link your GitHub ID to your name in the class roster. Once that's done, you'll be taken to a page that invites you to accept the assignment. Click the green "Accept this assignment" button.
+You'll be prompted to login to GitHub if you're not already logged in, and asked for permission to link to GitHub Classroom (the tool we use to distribute the assignments). Once that's done, you'll be taken to a page that invites you to accept the assignment. Click the green "Accept this assignment" button.
 
 ![Accept assignment](images/accept.png)
 
@@ -281,9 +280,10 @@ If all goes well, you'll arrive at the 'creating repo' page. This could take a f
 When your repo is ready, you'll see a page that has a link to it. Note that the assignment due date is listed. 
 
 ![Repo ready](images/repoready.png)
-Follow the link. Congratulations! This is the web page of your new repository on Github. Using the GitHub website, you will be able to browse your files directly inside of an internet browser (although so far it is empty since we haven't added any files). Notice that this repo is labeled 'Private'. It is only accessible to you, and to the teaching team. No one else can see it. You'll get to shared repositories when we start the group projects.
 
-![Repository created screenshot](images/create_repository_success.png)
+Click on the link highlighted in blue. Congratulations! This is the web page of your new repository on Github. Using the GitHub website, you will be able to browse your files directly inside of an internet browser. Notice that this repo is labeled 'Private'. It is only accessible to you, and to the teaching team. No one else can see it. You'll get to shared repositories when we start the group projects. Also notice that the repository only contains one file, called `README.md`. For some future assignments, the repository will already contain more content.
+
+![Repository created screenshot](images/create_repository_success.png) 
 
 If you cannot create a repository, get help from one of the TAs. 
 
@@ -295,12 +295,7 @@ Next, we want to clone this repository into your laptop so that you have a local
 
 Make sure you have the latest version of RStudio installed before you start. 
 
-Copy the https URL from your GitHub repository website. It will be something like `https://github.com/STAT540-UBC-2022/seminar-01-yourgithubID.git` See below. 
-
-
-![Repository link screenshot](images/create_repository_success_link.png)
-
-**Important Note:** Unlike in this example, where we started with an empty repository, for some future deliverables, the repository created for you will already contain files. In that case, **to find the "repository URL", locate the green "Code" button on the upper right corner of the file list as shown below.** 
+Click on the green 'Code' button, and copy the https URL from your GitHub repository website. It will be something like `https://github.com/STAT540-UBC-2022/seminar-01-yourgithubID.git` See below. 
 
 ![GitHub clone](images/clone.png)
 
@@ -325,11 +320,11 @@ Also note that a new RStudio window has been opened for you as a workspace. Noti
 
 Congratulations, again! You have cloned the Git repository onto your local machine. Well done!
 
-Notice that the project directory current contains nothing except for the automatically generated .Rproj and .gitignore file. Ignore this last file for now, we will talk about it later (ignore .gitignore, ha! It's okay, you don't have to laugh). This is not very exciting yet at all. So let's add something. 
+Notice that the project directory current contains the `README.md` file, along with the automatically generated `.Rproj` and `.gitignore` file. The `.Rproj` file contains various project options and can also be used as a shortcut for opening the project directly from the filesystem. Ignore the last file for now, we will talk about it later (ignore .gitignore, ha! It's okay, you don't have to laugh).
 
-The first thing you should add to every directory you create is README.md, and you will soon see why. This is something that integrates very well into the GitHub user interface; GitHub always detects your README files automatically and displays it right on the repository web page, giving information about the repository. 
+The first file you should include in every directory you create is README.md, and you will soon see why. This is something that integrates very well into the GitHub user interface; GitHub always detects your README files automatically and displays it right on the repository web page, giving information about the repository. 
 
-Go ahead and create a new file in your project directory (File->New File->Markdown file). Add the line "This is a line from RStudio". Save your file to the local repo directory and call it `README.md`. 
+Our README file already exists. Go ahead and open it in RStudio by clicking on it's name in the file pane (or File -> Open File). Add the line "This is a line from RStudio". Save the changes (disk icon or File -> Save).
 
 Next, we want to publish this change on GitHub so that it becomes a permanent change with a record (and in the future so that your group members or collaborators can access it if it were a shared repo). The process is a little awkward to start with so we'll take it one step at a time.
 
@@ -349,44 +344,42 @@ Note that if you were doing this on the command line, you'd use the `git add` co
 
 Next, we want to commit these changes. By committing, you effectively create a new record to remember the current state of the directory. This is something you don't get from only staging the files. 
 
-You can commit by clicking Tools > Version Control > Commit (or hit the Commit button in the Git pane). Notice the changes for each file can be viewed in the popup window. Enter a commit message to describe your change. I put "Add README.md and the RStudio project file to repository" for mine. All your staged files will be included in this commit. Click "Commit" and "Close". 
+You can commit by clicking Tools > Version Control > Commit (or hit the Commit button in the Git pane). Notice the changes for each file can be viewed in the popup window. Enter a commit message to describe your change. I put "Edit README.md and add the RStudio project file to repository" for mine. All your staged files will be included in this commit. Click "Commit" and "Close". 
 
 ![Commit changes](images/commit.png)
 
-Go to your repository page on [GitHub](https://github.com/). Notice that the new files are not yet on GitHub. Surprised? 
+Go back to your repository page on GitHub and refresh. Notice that the new files are not yet on GitHub. Surprised? 
 
-**IMPORTANT NOTE!! The changes are NOT on GitHub yet. They have NOT been published. Commit is an operation that happens solely on your local repository.** This allows you to create a record of changes while being offline. This also shields you from complications that may arise when merging with the remote repository (until you decide to push). This is something that confuses a lot of beginners. Take a moment to think about this. If in doubt, ask a TA and clarify.
+**IMPORTANT NOTE!! The changes are NOT on GitHub yet. They have NOT been published. Commit is an operation that happens solely on your local copy of the repository.** This allows you to create a record of changes while being offline. This also shields you from complications that may arise when merging with the remote repository (until you decide to push). This is something that confuses a lot of beginners. Take a moment to think about this. If in doubt, ask a TA and clarify.
 
 ### Push
 
 Push is the operation to bring the remote repository hosted on GitHub up to date with your local changes. Normally, you might have accumulated one or more commits in your local repository that you're ready to publish. All of these commits can be pushed with one "push" operation. 
 
-Now we will push the one commit we made with the addition of the README.md and .Rproj files. 
+Now we will push the one commit we made with the edit to the `README.md` file and addition of the `.Rproj` file. 
 
 Do this by clicking the green 'Up' arrow (or Tools->Version Control->Push Branch).
 
 ![Push](images/push.png)
 
-You should see this pop-up in RStudio. 
+You should see pop-up like this in RStudio. 
 
 ``` 
 >>> git push origin HEAD:refs/heads/main
-To https://github.com/STAT540-UBC-2022/seminar-01-teststudentstat540.git
+To https://github.com/STAT540-UBC-2024/seminar-01-teststudentstat540.git
  * [new branch]      HEAD -> main
 ```
 
-Now, go back to your repository page on [GitHub](https://github.com/). This is what you should see. 
+Now, go back to your repository page on GitHub and refresh. This is what you should see. 
 
 ![Changes pushed!](images/pushed.png)
 
 
-Notice that the content of README.md is displayed directly on the repository's home page!
+Notice that the new content of README.md is displayed directly on the repository's home page!
 
 Take a moment to browse through GitHub's user interface. You can navigate through the files and their contents. You can also look at the commit history by clicking on "commit". In addition, GitHub supports a range of project management features including issues, wiki pages, and contribution statistics. You will inevitably learn more and you gain more experience!
 
-Keep in mind that if someone else wants to clone your repository, an owner (in the case of assignments that is you or a teaching team member) must first add the individual(s) to the collaborators list in order for them to have access. This is because by default the repo is private to only you and the teaching team. You can change this if you wish by going to 'Settings' - see below.
-
-![GitHub add collaborators](images/add_collabs.png)
+Keep in mind that if someone else wants to clone your repository, an owner (in the case of assignments that is you or a teaching team member) must first add the individual(s) to the collaborators list in order for them to have access. This is because by default the repo is private to only you and the teaching team. You can change this if you wish by going to 'Settings'.
 
 
 ### Pull
@@ -394,12 +387,12 @@ Keep in mind that if someone else wants to clone your repository, an owner (in t
 
 Finally, we want to demo the pull operation. We will make a change directly on GitHub. *Don't actually do this in practice (see note below)*. This is just an illustration to show how we could pull in changes to files that were made somewhere else than on your local machine. This simulates the situation where your group member pushes a new change that you don't currently have. In order to sync up, you'll perform a "pull" from the remote repository into your local repository. 
 
-To make a change directly on GitHub, go to your repository page, click on the file README.md. On top right of the file, there should be a pencil icon. 
+To make a change directly on GitHub, go to your repository page, click on the file README.md. On top right of the file, there is a pencil icon. 
 
 ![Edit file on GitHub directly](images/pencil.png)
 
 
-Click on the pencil. Add this line to README.md: "This change was made directly on GitHub." Put in a commit message and commit directly to the "main" branch. Now you should see this. 
+Click on the pencil. Add this line to README.md: "This change was made directly on GitHub." Put in a commit message and commit directly to the "main" branch by clicking the green "Commit changes..." button. Now you should see this. 
 
 ![README.md changed directly on GitHub](images/demo_direct_edit.png)
 
@@ -428,15 +421,50 @@ Go ahead and take a look at the content of this file now. You should see the fol
 .Ruserdata
 ```
 
-This is basically telling Git to ignore all these files in the list. This may come in handy when you start working on your project. The datasets that you will work with may be >100 MB in size, which exceeds GitHub's per file limit. You may still want to keep the data files inside your project directory for easy access. In this case, you can add those filenames to this .gitignore file so that Git doesn't bug you about these "unstaged changes". Or, you can add all files with a certain extension using a wildcard. For example, if we wanted to make sure we don't commit data in txt files, we could add the line `*.txt` to our .gitignore file. GitHub keeps up a set of commonly used .gitignore files as well as more information about their usage [here](https://github.com/github/gitignore).
+This is basically telling Git to ignore all these files in the list. This may come in handy when you start working on your project. The datasets that you will work with may be >100 MB in size, which exceeds GitHub's per file limit. You may still want to keep the data files inside your project directory for easy access. In this case, you can add those filenames to this .gitignore file so that Git doesn't bug you about these "unstaged changes". Or, you can add all files with a certain extension using a wildcard. For example, if we wanted to make sure we don't commit data in txt files, we could add the line `*.txt` to our .gitignore file. GitHub keeps up a set of commonly used .gitignore files as well as more information about their usage [here](https://github.com/github/gitignore). You can commit this file now, but it's not required for the deliverable. 
 
 ## Part 4: Deliverables
 
-If you're still with us, and you've made the two commits to the README file in your assignment repo (one by pushing from your local machine, and another by committing directly from GitHub), then you're almost done! All that's left is to **submit** the repository URL on Canvas - copy and paste the URL of your repository as the submission for that assignment on Canvas (e.g. the link for your Seminar 1 repo will be something like `https://github.com/STAT540-UBC-2023/seminar-01-yourGitHubID`).  
+If you're still with us, and you've made the two commits to the README file in your assignment repo (one by pushing from your local machine, and another by committing directly from GitHub), then you're almost done! All that's left is to **submit** the repository URL on Gradescope (see next section).  
 
-Just make sure you complete these two commits **and push** before the deadline - verify that you can see them on GitHub like below, otherwise we won't be able to see them either, even if you submit the correct repository link on Canvas before the deadline. The TAs will mark the repos based on the latest commit that occurred before the deadline (this tag is auto-generated). Any commits after the deadline will be ignored (not marked). 
+Before moving on, verify that you have pushed all your work so you can see the changes on GitHub. In the case of this seminar, you should see your latest commit on GitHub as shown below.
 
-![Verify two commits are visible](images/twocommits.png)
+![Verify two commits are visible](images/latestcommit.png)
+
+### Gradescope submission
+
+To submit your repository on Gradescope, click on the Gradescope link in the Assignment page on Canvas (alternatively, you can navigate to Gradescope using the tab located on the Canvas navigation pane).
+
+![Open gradescope](images/opengradescope.png)
+You should be taken to your Gradescope dashboard, where you'll see our course: 
+
+![Gradescope dashboard](images/gradescopehome.png)
+
+When you click on our course, you'll see a list of available assignments to submit:
+
+![Gradescope course page](images/gradescopecourse.png)
+
+After you click on the `seminar-01` assignment, select GitHub for submission method. If this is the first time you are submitting with Gradescope, you'll be asked to connect to your GitHub account.
+
+![Gradescope submit part 1](images/gradescopesubmit.png)
+
+Once your GitHub account is linked, select the repository you want to submit for this assignment. This should be the one we just committed and pushed to. Also select the branch you worked on (here we only have one, but in the future this can be useful if you had different branches). Then click Upload.
+
+![Gradescope submit part 2](images/gradescopesubmit2.png)
+
+Success! You'll see your submitted files. These are the files that will be marked.
+
+![Gradescope submit part 2](images/gradescopefinal.png)
+
+The TAs will mark the repository version that was submitted through Gradescope. Any commits made after submission on Gradescope will be not be visible to us (not marked), but you may resubmit your repository as many times as you like up until the deadline (and we'll use the latest submission). 
+
+### Assignment Completion Overview
+
+Make sure you complete these steps before the deadline:
+
+1. **Commit** changes locally
+2. **Push** to GitHub
+3. **Submit** the repository on Gradescope
 
 ## Final notes and some additional resources
 
@@ -461,4 +489,4 @@ Here are some resources in case you want to learn more.
 
 ## Attributions
 
-This seminar was oringally developed by [Eric Chu](https://github.com/echu113) with materials adapted from [Happy Git and GitHub for the useR](http://happygitwithr.com/) by [Dr. Jenny Bryan](https://github.com/jennybc). It was later modified extensively by Keegan Korthauer.
+This seminar was originally developed by [Eric Chu](https://github.com/echu113) with materials adapted from [Happy Git and GitHub for the useR](http://happygitwithr.com/) by [Dr. Jenny Bryan](https://github.com/jennybc). It was later modified extensively by Keegan Korthauer.
